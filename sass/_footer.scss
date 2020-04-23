@@ -1,4 +1,35 @@
 .footer {
     background-color: $color-secondary;
     grid-column: full-start / full-end;
+    padding:6rem;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+    align-items: center;
+    column-gap: 3rem;
+   
+    &__item {
+        list-style: none;
+        text-transform: uppercase;
+        transition: all .5s;
+        padding:1.6rem;
+        &:hover {
+            background-color:$color-grey-dark-2;
+            transform: translateY(-0.8rem);
+        }
+    }   
+    &__link {
+        text-decoration: none;
+        color:#aaa;
+        font-size: 1.4rem;
+        text-align: center; 
+    }
+}
+.footer__text {
+    text-align: center;
+    color:#aaa;
+    font-size: 1.5rem;
+    margin:3rem auto auto;
 }
