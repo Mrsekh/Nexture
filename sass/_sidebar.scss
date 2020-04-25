@@ -2,6 +2,11 @@
     background-color: $color-primary;
     grid-column: sidebar-start / sidebar-end;
     grid-row:1 / -1;
+
+    @media only screen and (max-width:$bp-large) {
+        grid-row:1 / span 1;
+        grid-column: full-start / full-end;
+    }
 }   
 
 .nav-btn {
@@ -9,7 +14,7 @@
     height: 2px;
     width: 4.5rem;
     margin-top:5rem;
-    margin-left: 1rem;
+    margin-left: 1.4rem;
     background-color: #fff;
     &::before,&::after {
         content: "";
@@ -17,12 +22,22 @@
         width: 4.5rem;
         display: block;
         background-color: #fff;
-        margin-left:1.4rem;
     }
     &::before {
        transform: translateY(-1.5rem); 
     }
     &::after {
        transform: translateY(1.5rem);
+    }
+    @media only screen and (max-width:$bp-large) {
+        & {
+            margin-top: 3rem;
+        }
+        &::before {
+            transform: translateY(-1rem); 
+         }
+         &::after {
+            transform: translateY(1rem);
+         }
     }
 }

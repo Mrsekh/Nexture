@@ -5,13 +5,26 @@
     grid-column: col-start 7 / full-end;
     row-gap: 2rem;
     align-content: center;
+    padding:3rem;
+
+    @media only screen and (max-width:$bp-medium) {
+        grid-column: full-start / full-end;
+        padding:3rem;
+    }
     &__list {
         display: grid;
-        grid-template-columns: max-content max-content;
+        grid-template-columns: min-content max-content;
         column-gap:3rem;
         row-gap:3rem;
         align-items: center;
         justify-content: center; 
+        @media only screen and (max-width:$bp-medium) {
+            row-gap:3rem;
+            grid-template-columns:repeat(3, min-content max-content);
+        }
+        @media only screen and (max-width:$bp-small) {
+            grid-template-columns: min-content max-content; 
+        }
     }
     &__household {
         color:$color-grey-light-2;
@@ -23,6 +36,6 @@
    }
    &__photo {
        height: 8rem;
-       border-radius: 50rem;
+       border-radius: 50%;
    }
 }

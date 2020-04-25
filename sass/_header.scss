@@ -2,7 +2,8 @@
     background-color: $color-grey-dark-1;
     grid-column: full-start / col-end 6;
     display: grid;
-    grid-template-rows:1fr min-content 6rem 1fr;
+    grid-template-rows:1fr min-content minmax(6rem,min-content)  1fr;
+    grid-template-columns:minmax(min-content,max-content);
     background-image: linear-gradient(rgba($color-secondary,.93)
     ,rgba($color-secondary,.93)),url('/img/hero.jpeg');
     background-size: cover;
@@ -10,24 +11,31 @@
     padding:6rem;
     padding-top:4rem;
     row-gap: 1.5rem;
-    grid-template-columns: max-content;
     justify-content: center;
+
+    @media only screen and (max-width:$bp-medium) {
+        grid-column: full-start / full-end;
+    }
+    @media only screen and (max-width:$bp-medium) {
+        padding:4rem;
+    }
+
     &__logo {
         height:3rem;
         justify-self: center;
     }
-
-
     &__seenon {
-        
         &--pictures  {
             display: grid;
-            grid-template-columns: repeat(4,min-content);
+            grid-template-columns:repeat(4,1fr);
             column-gap:3rem;
-            justify-content: center;
+            justify-items: center;
+            align-items: center;
             img {
-                height:3rem;
+                max-height:2.5rem;
+                max-width:100%;
                 filter: brightness(70%);
+               
             }
         }
         &--text {
@@ -35,14 +43,12 @@
             grid-template-columns:1fr max-content 1fr;
             color:$color-grey-light-1;
             font-size:1.6rem;
-            justify-self: center;
             align-items:center;
             column-gap: 2rem;
             &::before,&::after {
                 content: "";
                 display: block;
                 background-color:$color-grey-light-1;
-                width:30rem;
                 height:1px;
                 filter: brightness(70%);
             }
