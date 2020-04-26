@@ -5,7 +5,7 @@
     grid-template-rows:1fr min-content minmax(6rem,min-content)  1fr;
     grid-template-columns:minmax(min-content,max-content);
     background-image: linear-gradient(rgba($color-secondary,.93)
-    ,rgba($color-secondary,.93)),url('/img/hero.jpeg');
+    ,rgba($color-secondary,.93)),url('img/hero.jpeg');
     background-size: cover;
     background-position: center;
     padding:6rem;
