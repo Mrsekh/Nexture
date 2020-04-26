@@ -1,6 +1,6 @@
 .story {
     &__pictures {
-        background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url('/img/back.jpg');
+        background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url('img/back.jpg');
         background-size: cover;
         grid-column: full-start / col-end 4;
         display: grid;
